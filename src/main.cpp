@@ -11,6 +11,8 @@ const int D5 = 11;
 const int D6 = 12;
 const int D7 = 13;
 
+const int irReceiverPin = 22;
+
 bool uhrzeit = false;
 bool uhrzeitModus = false;
 bool hauptmenu = true;
@@ -36,6 +38,7 @@ void setup() {
   Wire.begin();           
   rtc.begin();                
   lcd.begin(16, 2);
+  IrReceiver.begin(irReceiverPin, false);
 }
 
 void loop() {
