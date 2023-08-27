@@ -13,6 +13,9 @@ const int D7 = 13;
 
 const int irReceiverPin = 22;
 
+const int RTC_SDA = A8;   // SDA-Pin des RTC-Moduls an analogen Pin 8
+const int RTC_SCL = A9;   // SCL-Pin des RTC-Moduls an analogen Pin 9
+
 bool uhrzeit = false;
 bool uhrzeitModus = false;
 bool weckerModus = false;
