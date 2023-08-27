@@ -13,8 +13,8 @@ const int D7 = 13;
 
 const int irReceiverPin = 22;
 
-const int RTC_SDA = A8;   // SDA-Pin des RTC-Moduls an analogen Pin 8
-const int RTC_SCL = A9;   // SCL-Pin des RTC-Moduls an analogen Pin 9
+const int RTC_SDA = 20;   // SDA-Pin des RTC-Moduls an analogen Pin 8
+const int RTC_SCL = 21;   // SCL-Pin des RTC-Moduls an analogen Pin 9
 
 bool uhrzeit = false;
 bool uhrzeitModus = false;
@@ -48,6 +48,7 @@ void setup() {
   rtc.begin();
   lcd.begin(16, 2);
   IrReceiver.begin(irReceiverPin, false);
+  rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
 }
 
 void loop() {
